@@ -4,7 +4,7 @@
 // everything inside a DIV because multiple sibling sections
 function App(props) {
 	return (
-		<div className="container">
+		<div className='container'>
 		<header>
 				<nav>
 					<ul>
