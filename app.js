@@ -143,7 +143,6 @@ function App(props) {
 			<footer>
 				&copy; 2019 {props.name}
 			</footer>
-
 		</div>
 	);
 };
