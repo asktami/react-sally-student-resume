@@ -1,11 +1,11 @@
 'use strict';
 
-// App Component
-// everything inside a DIV because multiple sibling sections
-function App(props) {
+// Top (i.e. my header)
+// passing properties into Top
+// do not need a DIV because NO sibling sections
+function Top(props) {
 	return (
-		<div className="container">
-		<header>
+			<header>
 				<nav>
 					<ul>
 						<li>
@@ -30,6 +30,26 @@ function App(props) {
 				<br />
 				<img src='https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg' alt='Student Sally Picture' />
 			</header>
+	);
+};
+
+
+// App Component
+// everything inside a DIV because multiple sibling sections
+function App(props) {
+	return (
+		// alternative to START of encompassing DIV is <>
+		// called a React fragment
+		<div className="container">
+		
+		// pass to the Top the needed props
+			<Top
+			name= {props.name}	// gets name from App properties
+			email='sally@sally.com'
+			phone='1-111-222-3344'
+			url='http://www.sally.com'
+			github='github.com/sally'
+		 />
 
 			<main>
 				<section id='summary'>
@@ -145,6 +165,8 @@ function App(props) {
 			</footer>
 
 		</div>
+	// alternative to END of encompassing DIV is </>
+	// this is a react fragment
 	);
 };
 
@@ -154,10 +176,6 @@ const appRoot = document.querySelector('#root');
 ReactDOM.render(
 	<App
 		name='Sally Student'
-		email='sally@sally.com'
-		phone='1-111-222-3344'
-		url='http://www.sally.com'
-		github='github.com/sally'
 	/>,
 	appRoot
 );
